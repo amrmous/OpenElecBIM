@@ -49,3 +49,5 @@ storage/state/
 credentials.json
 token.json
 *.token.json
+storage/google-env/
+storage/config/oauth_client.json
