@@ -1,4 +1,4 @@
-﻿.venv/
+.venv/
 venv/
 env/
 docling-env/
@@ -40,3 +40,7 @@ processed-data/
 *.tmp
 *.bak
 *.swp
+
+# Local backups
+backup_*/
+*.backup
