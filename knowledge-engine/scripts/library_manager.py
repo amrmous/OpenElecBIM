@@ -12,7 +12,7 @@ from watchdog.events import FileSystemEventHandler
 from watchdog.observers import Observer
 
 
-PROJECT_ROOT = Path(r"F:\AI_Electrical_BIM")
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 SETTINGS_FILE = PROJECT_ROOT / "knowledge-engine" / "config" / "settings.json"
 
 def load_settings() -> dict:
@@ -264,7 +264,7 @@ class LibraryWatcher:
         self.observer.schedule(
             handler,
             str(LIBRARY_ROOT),
-            recursive=False,
+            recursive=True,
         )
 
         self.worker.start()
@@ -291,7 +291,7 @@ def watch() -> None:
     log("EVENT-DRIVEN WATCH MODE")
     log("=" * 70)
     log(f"Watching: {LIBRARY_ROOT}")
-    log("Watching PDF/DOCX create, modify, and move events.")
+    log("Watching configured extensions: " + str(SUPPORTED_EXTENSIONS))
     log("No periodic full-library scan.")
     log("")
 

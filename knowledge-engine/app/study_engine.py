@@ -13,7 +13,7 @@ from docling.document_converter import DocumentConverter, PdfFormatOption
 from docling_core.transforms.chunker.hierarchical_chunker import HierarchicalChunker
 
 
-PROJECT_ROOT = Path(r"F:\AI_Electrical_BIM")
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 ENGINE_ROOT = PROJECT_ROOT / "knowledge-engine"
 CONFIG_FILE = ENGINE_ROOT / "config" / "settings.json"
 INPUT_DIR = ENGINE_ROOT / "input"

@@ -1,0 +1,355 @@
+{
+    "registry_version": "1.0",
+    "name": "OpenElecBIM Universal Source Registry",
+    "description": "Central registry for engineering files, BIM/CAD projects, documents, images, archives, web sources and future source types.",
+    "principles": {
+        "extension_is_not_version": true,
+        "unknown_formats_are_allowed": true,
+        "parser_readiness_is_separate_from_extension_support": true,
+        "provenance_is_required": true
+    },
+    "file_sources": {
+        "revit": {
+            "category": "bim",
+            "extensions": [
+                ".rvt",
+                ".rfa",
+                ".rte",
+                ".rft"
+            ],
+            "adapter": "revit",
+            "status": "planned",
+            "semantic_targets": [
+                "project",
+                "levels",
+                "rooms",
+                "spaces",
+                "views",
+                "sheets",
+                "families",
+                "family_types",
+                "electrical_equipment",
+                "lighting_fixtures",
+                "devices",
+                "panels",
+                "circuits",
+                "systems",
+                "parameters",
+                "schedules"
+            ]
+        },
+        "autocad": {
+            "category": "cad",
+            "extensions": [
+                ".dwg",
+                ".dxf",
+                ".dwt",
+                ".dws",
+                ".dwf"
+            ],
+            "adapter": "autocad",
+            "status": "planned",
+            "semantic_targets": [
+                "layers",
+                "blocks",
+                "attributes",
+                "text",
+                "mtext",
+                "dimensions",
+                "polylines",
+                "lines",
+                "arcs",
+                "circles",
+                "electrical_symbols",
+                "drawing_metadata"
+            ]
+        },
+        "bim_exchange": {
+            "category": "bim",
+            "extensions": [
+                ".ifc",
+                ".ifczip",
+                ".nwc",
+                ".nwd",
+                ".nwf"
+            ],
+            "adapter": "bim_exchange",
+            "status": "planned",
+            "semantic_targets": [
+                "elements",
+                "systems",
+                "spaces",
+                "properties",
+                "relationships",
+                "geometry_metadata"
+            ]
+        },
+        "etap": {
+            "category": "electrical_engineering",
+            "extensions": [
+                ".oti",
+                ".otg",
+                ".etap"
+            ],
+            "adapter": "etap",
+            "status": "planned",
+            "semantic_targets": [
+                "buses",
+                "transformers",
+                "cables",
+                "loads",
+                "motors",
+                "generators",
+                "protection",
+                "short_circuit",
+                "load_flow",
+                "reports",
+                "harmonics",
+                "arc_flash"
+            ]
+        },
+        "dialux": {
+            "category": "lighting",
+            "extensions": [
+                ".dlx",
+                ".evo"
+            ],
+            "adapter": "dialux",
+            "status": "planned",
+            "semantic_targets": [
+                "rooms",
+                "areas",
+                "luminaires",
+                "mounting",
+                "calculation_results",
+                "lux",
+                "uniformity",
+                "glare",
+                "lighting_reports"
+            ]
+        },
+        "pdf": {
+            "category": "document",
+            "extensions": [
+                ".pdf"
+            ],
+            "adapter": "docling_pdf",
+            "status": "available",
+            "semantic_targets": [
+                "text",
+                "tables",
+                "figures",
+                "headings",
+                "pages",
+                "metadata",
+                "references"
+            ]
+        },
+        "word": {
+            "category": "document",
+            "extensions": [
+                ".doc",
+                ".docx",
+                ".docm",
+                ".dot",
+                ".dotx",
+                ".rtf"
+            ],
+            "adapter": "office_document",
+            "status": "planned"
+        },
+        "spreadsheet": {
+            "category": "data",
+            "extensions": [
+                ".xls",
+                ".xlsx",
+                ".xlsm",
+                ".xlsb",
+                ".xlt",
+                ".xltx",
+                ".csv",
+                ".tsv",
+                ".ods"
+            ],
+            "adapter": "spreadsheet",
+            "status": "planned",
+            "semantic_targets": [
+                "sheets",
+                "rows",
+                "columns",
+                "cells",
+                "formulas",
+                "tables",
+                "charts",
+                "named_ranges"
+            ]
+        },
+        "presentation": {
+            "category": "document",
+            "extensions": [
+                ".ppt",
+                ".pptx",
+                ".pptm",
+                ".pps",
+                ".ppsx",
+                ".odp"
+            ],
+            "adapter": "presentation",
+            "status": "planned"
+        },
+        "text_markup_data": {
+            "category": "document",
+            "extensions": [
+                ".txt",
+                ".md",
+                ".rst",
+                ".html",
+                ".htm",
+                ".xml",
+                ".json",
+                ".yaml",
+                ".yml"
+            ],
+            "adapter": "text_markup",
+            "status": "planned"
+        },
+        "images": {
+            "category": "image",
+            "extensions": [
+                ".png",
+                ".jpg",
+                ".jpeg",
+                ".tif",
+                ".tiff",
+                ".bmp",
+                ".gif",
+                ".webp",
+                ".svg"
+            ],
+            "adapter": "image_ocr",
+            "status": "planned",
+            "semantic_targets": [
+                "ocr_text",
+                "dimensions",
+                "metadata",
+                "detected_regions",
+                "engineering_symbols"
+            ]
+        },
+        "cad_exchange": {
+            "category": "cad_exchange",
+            "extensions": [
+                ".sat",
+                ".step",
+                ".stp",
+                ".iges",
+                ".igs",
+                ".obj",
+                ".stl",
+                ".3mf"
+            ],
+            "adapter": "cad_exchange",
+            "status": "planned"
+        },
+        "archives": {
+            "category": "archive",
+            "extensions": [
+                ".zip",
+                ".7z",
+                ".rar",
+                ".tar",
+                ".gz",
+                ".tgz"
+            ],
+            "adapter": "archive",
+            "status": "planned",
+            "behavior": "extract_and_classify_contents"
+        }
+    },
+    "web_sources": {
+        "generic_url": {
+            "schemes": [
+                "http",
+                "https"
+            ],
+            "adapter": "web",
+            "status": "planned",
+            "provenance_required": true
+        },
+        "youtube": {
+            "domains": [
+                "youtube.com",
+                "www.youtube.com",
+                "youtu.be"
+            ],
+            "adapter": "youtube",
+            "status": "planned",
+            "outputs": [
+                "url",
+                "title",
+                "description",
+                "available_metadata",
+                "transcript_when_permitted"
+            ]
+        },
+        "facebook": {
+            "domains": [
+                "facebook.com",
+                "www.facebook.com"
+            ],
+            "adapter": "social",
+            "status": "planned",
+            "access_policy": "public_or_authorized_content_only"
+        },
+        "linkedin": {
+            "domains": [
+                "linkedin.com",
+                "www.linkedin.com"
+            ],
+            "adapter": "social",
+            "status": "planned",
+            "access_policy": "public_or_authorized_content_only"
+        },
+        "educational_websites": {
+            "adapter": "web",
+            "status": "planned",
+            "access_policy": "public_or_authorized_content_only"
+        }
+    },
+    "engineering_categories": {
+        "books": "books",
+        "standards": "standards",
+        "electrical_codes": "electrical-codes",
+        "previous_projects": "previous-projects",
+        "shop_drawings": "shop-drawings",
+        "revit": "revit",
+        "autocad": "autocad",
+        "etap": "etap",
+        "dialux": "dialux",
+        "manufacturers": "manufacturers",
+        "websites": "websites",
+        "articles": "articles",
+        "courses": "courses",
+        "facebook": "facebook",
+        "linkedin": "linkedin",
+        "other": "other"
+    },
+    "unknown_source": {
+        "category": "unknown",
+        "adapter": "classifier",
+        "status": "fallback",
+        "behavior": "classify_without_crashing"
+    },
+    "provenance": {
+        "required_fields": [
+            "source_id",
+            "source_type",
+            "original_name",
+            "original_path_or_url",
+            "ingestion_timestamp",
+            "adapter",
+            "parser_status",
+            "content_hash"
+        ]
+    }
+}
