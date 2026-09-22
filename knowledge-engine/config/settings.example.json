@@ -1,0 +1,18 @@
+﻿{
+    "library_path":  "PATH_TO_YOUR_OPEN_ELECBIM_KNOWLEDGE_LIBRARY",
+    "processed_path":  "PATH_TO_YOUR_OPEN_ELECBIM_KNOWLEDGE_LIBRARY/09_Processed",
+    "index_path":  "PATH_TO_YOUR_OPEN_ELECBIM_KNOWLEDGE_LIBRARY/10_Metadata/index",
+    "profiles_path":  "PATH_TO_YOUR_OPEN_ELECBIM_KNOWLEDGE_LIBRARY/10_Metadata/profiles",
+    "supported_extensions":  [
+                                 ".pdf",
+                                 ".docx",
+                                 ".pptx",
+                                 ".xlsx",
+                                 ".txt",
+                                 ".md"
+                             ],
+    "language_support":  [
+                             "ar",
+                             "en"
+                         ]
+}
