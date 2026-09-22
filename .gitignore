@@ -44,3 +44,8 @@ processed-data/
 # Local backups
 backup_*/
 *.backup
+storage/config/storage.json
+storage/state/
+credentials.json
+token.json
+*.token.json

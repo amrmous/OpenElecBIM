@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "providers": {
+    "google_drive": {
+      "enabled": true,
+      "profiles": []
+    }
+  }
+}
