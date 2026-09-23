@@ -1,85 +1,267 @@
 from pathlib import Path
+import json
 import sys
+import tempfile
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(PROJECT_ROOT))
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
-from storage.scripts.storage_pool_manager import StoragePoolManager
-from storage.providers.mock_provider import MockStorageProvider
-from storage.scripts.storage_service import StorageService
+SCRIPTS_DIR = PROJECT_ROOT / "storage" / "scripts"
+PROVIDERS_DIR = PROJECT_ROOT / "storage" / "providers"
+
+sys.path.insert(0, str(SCRIPTS_DIR))
+sys.path.insert(0, str(PROVIDERS_DIR))
+
+from contributor_registry import ContributorRegistry
+from storage_profile_registry import StorageProfileRegistry
+from knowledge_object_registry import KnowledgeObjectRegistry
+from replica_registry import ReplicaRegistry
+from contribution_ledger import ContributionLedger
+from provider_registry import create_default_registry
+from provider_manager import ProviderManager
+from storage_pool_manager import StoragePoolManager
+from storage_service import StorageService
 
 
-TEST_SOURCE = PROJECT_ROOT / "storage" / "tests" / "end_to_end_source.txt"
-TEST_SOURCE.parent.mkdir(parents=True, exist_ok=True)
+with tempfile.TemporaryDirectory(prefix="openelec_storage_service_") as temp_dir:
+    temp_dir = Path(temp_dir)
 
-TEST_SOURCE.write_text(
-    "OpenElecBIM End-to-End Storage Transaction Test\n"
-    "Electrical BIM Knowledge Object\n"
-    "SHA-256 integrity test\n",
-    encoding="utf-8",
-)
+    source = temp_dir / "runtime_source.txt"
+    source.write_text(
+        "OpenElecBIM StorageService isolated runtime test\n"
+        "Knowledge Object -> Replica -> Contribution Ledger\n"
+        "SHA-256 integrity verification\n",
+        encoding="utf-8",
+    )
 
-MOCK_ROOT = (
-    PROJECT_ROOT
-    / "storage"
-    / "tests"
-    / "e2e_mock_storage"
-)
+    provider_root = temp_dir / "mock_provider"
+    download_path = temp_dir / "downloaded.txt"
 
-MOCK_ROOT.mkdir(parents=True, exist_ok=True)
+    # --------------------------------------------------------
+    # Build isolated registries.
+    # --------------------------------------------------------
+    contributor_file = temp_dir / "contributors.json"
+    profile_file = temp_dir / "profiles.json"
+    object_file = temp_dir / "objects.json"
+    replica_file = temp_dir / "replicas.json"
+    ledger_file = temp_dir / "ledger.json"
 
-pool = StoragePoolManager()
+    contributor_file.write_text(
+        json.dumps(
+            {
+                "version": 2,
+                "project": "OpenElecBIM",
+                "storage_providers": {},
+                "contributors": [
+                    {
+                        "contributor_id": "contributor_001",
+                        "display_name": "Runtime Contributor",
+                        "contributor_type": "individual",
+                        "enabled": True,
+                        "metadata": {
+                            "runtime_only": True,
+                        },
+                    }
+                ],
+            },
+            ensure_ascii=False,
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
 
-pool.provider_registry.unregister("google_drive")
-pool.provider_registry.register(
-    "google_drive",
-    MockStorageProvider,
-)
+    profile_file.write_text(
+        json.dumps(
+            {
+                "version": 1,
+                "project": "OpenElecBIM",
+                "storage_profiles": [
+                    {
+                        "storage_profile_id": "runtime_storage_service_profile",
+                        "contributor_id": "contributor_001",
+                        "provider": "mock",
+                        "display_name": "Runtime StorageService Mock",
+                        "account_reference": None,
+                        "root_reference": None,
+                        "enabled": True,
+                        "metadata": {
+                            "runtime_only": True,
+                        },
+                    }
+                ],
+            },
+            ensure_ascii=False,
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
 
-service = StorageService(pool)
+    object_file.write_text(
+        json.dumps(
+            {
+                "version": 1,
+                "project": "OpenElecBIM",
+                "knowledge_objects": [],
+            },
+            ensure_ascii=False,
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
 
-result = service.store_file(
-    TEST_SOURCE,
-    contributor_id="contributor_001",
-    storage_profile_id="storage_profile_test_001",
-    object_type="document",
-    title="OpenElecBIM End-to-End Test",
-    language="en",
-    destination="objects/e2e/end_to_end_source.txt",
-    metadata={
-        "test": True,
-        "stage": "end_to_end_storage",
-    },
-    provider_kwargs={
-        "root_path": str(MOCK_ROOT),
-    },
-)
+    replica_file.write_text(
+        json.dumps(
+            {
+                "version": 1,
+                "project": "OpenElecBIM",
+                "replicas": [],
+            },
+            ensure_ascii=False,
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
 
-print()
-print("========================================")
-print("OPEN ELECBIM END-TO-END STORAGE TEST")
-print("========================================")
-print("Success              =", result["success"])
-print("Provider             =", result["provider"])
-print("Object ID            =", result["object"]["object_id"])
-print("Replica ID           =", result["replica"]["replica_id"])
-if result.get("duplicate", False):
-    print("Contribution ID      = None (existing transaction)")
-    print("Content SHA-256      =", result["content_hash"])
-    print("Transaction Status   =", result["transaction"]["status"])
-    print("Duplicate            =", result["duplicate"])
-else:
-    print("Contribution ID      =", result["contribution"]["contribution_id"])
-    print("Content SHA-256      =", result["verification"]["content_hash"])
-    print("Object Hash          =", result["verification"]["object_hash"])
-    print("Replica Hash         =", result["verification"]["replica_hash"])
-    print("Ledger Hash          =", result["verification"]["ledger_hash"])
-    print("Hashes Match         =", result["verification"]["hashes_match"])
-    print("Ledger Entry Valid   =", result["verification"]["ledger_entry_valid"])
-    print("Ledger Chain Valid   =", result["verification"]["ledger_chain_valid"])
-print("========================================")
+    ledger_file.write_text(
+        json.dumps(
+            {
+                "version": 1,
+                "project": "OpenElecBIM",
+                "entries": [],
+            },
+            ensure_ascii=False,
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
 
-if not result["success"]:
-    raise SystemExit("END-TO-END TEST FAILED")
+    # --------------------------------------------------------
+    # Build current architecture with isolated registries.
+    # --------------------------------------------------------
+    pool = StoragePoolManager()
 
-print("END-TO-END STORAGE TEST = PASS")
+    pool.contributors = ContributorRegistry(
+        registry_file=contributor_file
+    )
+
+    pool.profiles = StorageProfileRegistry(
+        registry_path=profile_file
+    )
+
+    pool.objects = KnowledgeObjectRegistry(
+        registry_path=object_file
+    )
+
+    pool.replicas = ReplicaRegistry(
+        registry_path=replica_file
+    )
+
+    pool.ledger = ContributionLedger(
+        ledger_path=ledger_file
+    )
+
+    pool.provider_registry = create_default_registry()
+
+    pool.provider_manager = ProviderManager(
+        profile_registry=pool.profiles,
+        provider_registry=pool.provider_registry,
+    )
+
+    service = StorageService(pool)
+
+    profile_id = "runtime_storage_service_profile"
+
+    # --------------------------------------------------------
+    # CREATE TRANSACTION
+    # --------------------------------------------------------
+    result = service.store_file(
+        source,
+        contributor_id="contributor_001",
+        storage_profile_id=profile_id,
+        object_type="document",
+        title="Runtime StorageService Test",
+        language="en",
+        destination="objects/runtime/runtime_source.txt",
+        metadata={
+            "runtime_test": True,
+        },
+        provider_kwargs={
+            "root_path": str(provider_root),
+        },
+    )
+
+    print("=" * 80)
+    print("STORAGESERVICE CREATE TRANSACTION")
+    print("=" * 80)
+    print("Success            =", result["success"])
+    print("Duplicate          =", result["duplicate"])
+    print("Operation          =", result["operation"])
+    print("Provider           =", result["provider"])
+    print("Object ID          =", result["object_id"])
+    print("Replica ID         =", result["replica_id"])
+    print("Contribution ID    =", result["contribution_id"])
+    print("Content Hash       =", result["content_hash"])
+
+    assert result["success"] is True
+    assert result["duplicate"] is False
+    assert result["verification"]["hashes_match"] is True
+    assert result["verification"]["ledger_entry_valid"] is True
+    assert result["verification"]["ledger_chain_valid"] is True
+
+    # --------------------------------------------------------
+    # DUPLICATE TRANSACTION
+    # --------------------------------------------------------
+    duplicate = service.store_file(
+        source,
+        contributor_id="contributor_001",
+        storage_profile_id=profile_id,
+        object_type="document",
+        title="Runtime StorageService Test",
+        language="en",
+        destination="objects/runtime/runtime_source.txt",
+        metadata={
+            "runtime_test": True,
+        },
+        provider_kwargs={
+            "root_path": str(provider_root),
+        },
+    )
+
+    print()
+    print("DUPLICATE DETECTION")
+    print("Success            =", duplicate["success"])
+    print("Duplicate          =", duplicate["duplicate"])
+    print("Status             =", duplicate["transaction"]["status"])
+
+    assert duplicate["success"] is True
+    assert duplicate["duplicate"] is True
+    assert duplicate["transaction"]["status"] == "already_exists"
+
+    # --------------------------------------------------------
+    # DOWNLOAD + INTEGRITY
+    # --------------------------------------------------------
+    download = service.download_file(
+        result["replica_id"],
+        download_path,
+        provider_kwargs={
+            "root_path": str(provider_root),
+        },
+    )
+
+    print()
+    print("=" * 80)
+    print("STORAGESERVICE DOWNLOAD VERIFICATION")
+    print("=" * 80)
+    print("Success            =", download["success"])
+    print("Destination        =", download["destination"])
+    print("Expected Hash      =", download["expected_hash"])
+    print("Downloaded Hash    =", download["downloaded_hash"])
+    print("Hashes Match       =", download["hashes_match"])
+
+    assert download["success"] is True
+    assert download["hashes_match"] is True
+    assert download_path.is_file()
+
+    print()
+    print("=" * 80)
+    print("STORAGESERVICE FULL ISOLATED TEST = PASS")
+    print("=" * 80)
