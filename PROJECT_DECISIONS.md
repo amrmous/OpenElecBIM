@@ -12,16 +12,21 @@ Status: Accepted
 
 ## Decision 002 - Public Registry vs Private Configuration
 
-Public project storage metadata will be separated from private local
-configuration.
+Public storage metadata is maintained through dedicated registries under
+storage/config/.
 
-Public:
-storage/config/storage_registry.json
+Core public registries include:
+- storage_registry.json for contributor authority
+- storage_profile_registry.json for storage profiles
+- knowledge_object_registry.json for canonical knowledge objects
+- replica_registry.json for storage replicas
+- contribution_ledger.json for contribution history and verification
 
-Private:
-storage/config/storage.local.json
+Private authentication credentials and provider access tokens must remain
+outside Git and outside the public storage metadata model.
 
-Private configuration must remain outside Git.
+The active storage architecture must not depend on a legacy local-profile
+configuration file.
 
 Status: Accepted
 

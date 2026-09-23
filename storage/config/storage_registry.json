@@ -1,12 +1,6 @@
 {
   "version": 2,
   "project": "OpenElecBIM",
-  "storage_providers": {
-    "google_drive": {
-      "enabled": true,
-      "profiles": []
-    }
-  },
   "contributors": [
     {
       "contributor_id": "contributor_001",

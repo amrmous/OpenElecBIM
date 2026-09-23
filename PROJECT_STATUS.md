@@ -9,18 +9,18 @@ Storage architecture and project portability.
 - Project repository established.
 - Git/GitHub synchronization established.
 - Large/local-only directories excluded from Git.
-- Public/private storage configuration separation implemented.
+- Public storage metadata is separated into contributor, profile, object, replica, and contribution registries.
 - Multiple local storage profiles supported.
 - Google Drive adapter dependencies installed.
 - Google Drive adapter import tested successfully.
-- StorageManager tested successfully.
-- Storage example schema upgraded to version 2.
+- Legacy StorageManager retired after migration to StorageProfileRegistry, ProviderResolver, ProviderManager, and StorageService.
+- Legacy storage example/local-profile schema retired.
 - Storage direct dependencies documented.
 - Storage refactor committed and pushed to GitHub.
 
 Current storage commit:
 
-a695c11 - Refactor storage layer for local and public profiles
+41e7efd - Repair stale Google Drive replica
 
 ## Current Git State
 

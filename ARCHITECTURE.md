@@ -115,9 +115,14 @@ Examples:
 The current separation is:
 
 - storage/config/storage_registry.json
-- storage/config/storage.local.json
+- storage/config/storage_profile_registry.json
+- storage/config/knowledge_object_registry.json
+- storage/config/replica_registry.json
+- storage/config/contribution_ledger.json
 
-The local configuration is intentionally excluded from Git.
+Private provider credentials and OAuth tokens remain outside the public registry architecture.
+
+Private provider credentials and OAuth tokens remain outside Git and outside the public storage metadata architecture.
 
 ---
 

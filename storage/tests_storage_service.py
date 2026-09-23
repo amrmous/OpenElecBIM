@@ -50,7 +50,6 @@ with tempfile.TemporaryDirectory(prefix="openelec_storage_service_") as temp_dir
             {
                 "version": 2,
                 "project": "OpenElecBIM",
-                "storage_providers": {},
                 "contributors": [
                     {
                         "contributor_id": "contributor_001",
