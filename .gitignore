@@ -53,3 +53,6 @@ storage/google-env/
 storage/config/oauth_client.json
 storage/config/*.backup.json
 storage/config/storage.local.json
+
+storage/config/backups/
+storage/scripts/backups/
