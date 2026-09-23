@@ -52,3 +52,4 @@ token.json
 storage/google-env/
 storage/config/oauth_client.json
 storage/config/*.backup.json
+storage/config/storage.local.json

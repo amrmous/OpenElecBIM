@@ -1,0 +1,5 @@
+# OpenElecBIM Storage Layer
+# Google Drive integration dependencies
+
+google-auth-oauthlib==1.4.1
+google-api-python-client==2.200.0
