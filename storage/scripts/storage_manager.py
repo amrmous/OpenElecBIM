@@ -76,7 +76,14 @@ class StorageManager:
         if not provider:
             return []
 
-        return provider.get("profiles", [])
+        profiles = []
+
+        for profile in provider.get("profiles", []):
+            item = dict(profile)
+            item["provider"] = provider_name
+            profiles.append(item)
+
+        return profiles
 
     def get_all_profiles(self):
         profiles = []
@@ -102,15 +109,44 @@ class StorageManager:
             {}
         )
 
-    def get_local_profiles(self, contributor_id="local_owner"):
-        contributor = self.get_local_contributor(contributor_id)
+    def get_local_profiles(self, contributor_id=None):
+        """
+        Return local storage profiles.
 
-        return contributor.get("storage_profiles", [])
+        contributor_id=None:
+            Return profiles from all local contributors.
+
+        contributor_id=<id>:
+            Return profiles belonging only to that contributor.
+
+        Every returned profile is enriched with contributor_id.
+        """
+        profiles = []
+
+        contributors = self.get_local_contributors()
+
+        if contributor_id is not None:
+            contributors = {
+                contributor_id: contributors.get(contributor_id, {})
+            }
+
+        for current_contributor_id, contributor in contributors.items():
+            for profile in contributor.get("storage_profiles", []):
+                item = dict(profile)
+
+                item.setdefault(
+                    "contributor_id",
+                    current_contributor_id
+                )
+
+                profiles.append(item)
+
+        return profiles
 
     def get_local_profile(
         self,
         profile_id,
-        contributor_id="local_owner",
+        contributor_id=None,
     ):
         profiles = self.get_local_profiles(contributor_id)
 
@@ -122,7 +158,7 @@ class StorageManager:
 
     def get_enabled_local_profiles(
         self,
-        contributor_id="local_owner",
+        contributor_id=None,
     ):
         return [
             profile
@@ -140,6 +176,9 @@ class StorageManager:
             "providers": list(self.get_providers().keys()),
             "contributors": len(self.get_contributors()),
             "public_profiles": len(self.get_all_profiles()),
+            "local_contributors": len(
+                self.get_local_contributors()
+            ),
             "local_profiles": len(
                 self.get_local_profiles()
             ),
@@ -158,18 +197,21 @@ if __name__ == "__main__":
     print("Providers =", summary["providers"])
     print("Public Contributors =", summary["contributors"])
     print("Public Storage Profiles =", summary["public_profiles"])
+    print("Local Contributors =", summary["local_contributors"])
     print("Local Storage Profiles =", summary["local_profiles"])
     print("Enabled Local Profiles =", summary["enabled_local_profiles"])
 
     print()
-    print("LOCAL PROFILES")
+    print("ENABLED LOCAL PROFILES")
 
     for profile in manager.get_enabled_local_profiles():
         print(
             "-",
             profile.get("profile_id"),
-            "|",
+            "| contributor=",
+            profile.get("contributor_id"),
+            "| provider=",
             profile.get("provider"),
-            "|",
-            profile.get("account_email"),
+            "| enabled=",
+            profile.get("enabled"),
         )
