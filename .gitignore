@@ -56,3 +56,5 @@ storage/config/storage.local.json
 
 storage/config/backups/
 storage/scripts/backups/
+
+storage/objects/
