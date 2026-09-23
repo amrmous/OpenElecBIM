@@ -205,6 +205,26 @@
         "reference": "1CZc_ij7sx5T8ARRi6N80IJJOV0P5Cyz2"
       },
       "entry_hash": "9f273c6d40ed899343b8ade5035de8cf2a7058d005652b5bd878e5ebc9c654b9"
+    },
+    {
+      "contribution_id": "contribution_c17af1e0291c4626831aed48d03c8efa",
+      "contributor_id": "contributor_001",
+      "object_id": "knowledge_object_098c629cd1c149ae9f331d3a2b45cf95",
+      "replica_id": "replica_ae0e3984ac6340e6a530c1a996ff7855",
+      "storage_profile_id": "storage_profile_google_drive_001",
+      "action": "replica_add",
+      "content_hash": "4d1e10ddfa45a92e071562f17e6fb23c43efe37ffc84b06d7adc98cdd66577c7",
+      "timestamp": "2026-09-23T15:46:49.803365+00:00",
+      "previous_entry_hash": "9f273c6d40ed899343b8ade5035de8cf2a7058d005652b5bd878e5ebc9c654b9",
+      "metadata": {
+        "repair": true,
+        "repair_reason": "stale_replica_reference",
+        "repaired_replica_id": "replica_659e44184a914fed8f4d778d4d70dfb1",
+        "original_reference": "1tAXRsIOpFlJW1VQt0gDMlzRVKbgI-rE8",
+        "provider": "google_drive",
+        "reference": "1JcyEBo2RzlqPD1A1x-SkDUHttRKhq75m"
+      },
+      "entry_hash": "cbdc4b5ec80c5f1fb6bdbc4faed15c56afbe512e3d04f8d0c19f6ce7772b93a2"
     }
   ]
 }

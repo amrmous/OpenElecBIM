@@ -183,11 +183,11 @@
       "storage_profile_id": "storage_profile_google_drive_001",
       "provider": "google_drive",
       "reference": "1tAXRsIOpFlJW1VQt0gDMlzRVKbgI-rE8",
-      "status": "active",
+      "status": "needs_verification",
       "content_hash": "4d1e10ddfa45a92e071562f17e6fb23c43efe37ffc84b06d7adc98cdd66577c7",
       "hash_algorithm": "sha256",
       "created_at": "2026-09-23T10:52:59.325930+00:00",
-      "updated_at": "2026-09-23T10:52:59.325936+00:00",
+      "updated_at": "2026-09-23T15:46:46.299721+00:00",
       "metadata": {
         "test": "storage_service_google_drive",
         "purpose": "integration_test",
@@ -212,6 +212,27 @@
         "purpose": "forced_post_ledger_failure",
         "uploaded_hash": "881b27d87cb78740929ae8122290af0716b21207d166488688ba763e0f41e135",
         "operation": "create"
+      }
+    },
+    {
+      "replica_id": "replica_ae0e3984ac6340e6a530c1a996ff7855",
+      "object_id": "knowledge_object_098c629cd1c149ae9f331d3a2b45cf95",
+      "contributor_id": "contributor_001",
+      "storage_profile_id": "storage_profile_google_drive_001",
+      "provider": "google_drive",
+      "reference": "1JcyEBo2RzlqPD1A1x-SkDUHttRKhq75m",
+      "status": "active",
+      "content_hash": "4d1e10ddfa45a92e071562f17e6fb23c43efe37ffc84b06d7adc98cdd66577c7",
+      "hash_algorithm": "sha256",
+      "created_at": "2026-09-23T15:46:49.802728+00:00",
+      "updated_at": "2026-09-23T15:46:49.802736+00:00",
+      "metadata": {
+        "repair": true,
+        "repair_reason": "stale_replica_reference",
+        "repaired_replica_id": "replica_659e44184a914fed8f4d778d4d70dfb1",
+        "original_reference": "1tAXRsIOpFlJW1VQt0gDMlzRVKbgI-rE8",
+        "uploaded_hash": "4d1e10ddfa45a92e071562f17e6fb23c43efe37ffc84b06d7adc98cdd66577c7",
+        "operation": "replica_add"
       }
     }
   ]
