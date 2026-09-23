@@ -1,0 +1,193 @@
+{
+  "version": 1,
+  "project": "OpenElecBIM",
+  "knowledge_objects": [
+    {
+      "object_id": "knowledge_object_test_001",
+      "object_type": "document",
+      "title": "OpenElecBIM Test Knowledge Object",
+      "source": "test://open-elecbim",
+      "content_hash": "objecthash001",
+      "version": 1,
+      "language": "en",
+      "created_at": "2026-09-23T08:15:21.196801+00:00",
+      "updated_at": "2026-09-23T08:15:21.196801+00:00",
+      "metadata": {
+        "source_type": "test",
+        "domain": "electrical_bim"
+      }
+    },
+    {
+      "object_id": "knowledge_object_105f326728f643cc9035cb275f69d0b1",
+      "object_type": "document",
+      "title": "OpenElecBIM End-to-End Test",
+      "source": "F:\\AI_Electrical_BIM\\storage\\tests\\end_to_end_source.txt",
+      "content_hash": "75f2850774f14d3acac352631bd6cc0a71e8610af7859c9b0f4c992b34c08b13",
+      "version": 1,
+      "language": "en",
+      "created_at": "2026-09-23T08:30:57.718017+00:00",
+      "updated_at": "2026-09-23T08:30:57.718017+00:00",
+      "metadata": {
+        "test": true,
+        "stage": "end_to_end_storage",
+        "provider": "mock",
+        "storage_profile_id": "storage_profile_test_001",
+        "contributor_id": "contributor_001"
+      }
+    },
+    {
+      "object_id": "knowledge_object_84d61835cb4a49e88d8826bcdd196fcc",
+      "object_type": "document",
+      "title": "OpenElecBIM Unique Commit Test",
+      "source": "F:\\AI_Electrical_BIM\\storage\\tests\\unique_commit_source.txt",
+      "content_hash": "a428ceda11a9173ecda6ed7aa6dc43685042e26733968be3d5f464e6356e0c1e",
+      "version": 1,
+      "language": "en",
+      "created_at": "2026-09-23T08:39:04.161237+00:00",
+      "updated_at": "2026-09-23T08:39:04.161237+00:00",
+      "metadata": {
+        "test": true,
+        "stage": "successful_commit",
+        "provider": "mock",
+        "storage_profile_id": "storage_profile_test_001",
+        "contributor_id": "contributor_001"
+      }
+    },
+    {
+      "object_id": "knowledge_object_2c27363859b24b8b9182a0dd105cbb47",
+      "object_type": "document",
+      "title": "Storage Integration Test",
+      "source": "F:\\AI_Electrical_BIM\\storage\\test-source.txt",
+      "content_hash": "c70acf8f620b3862c4decb398153e57fa793b049d0f1d79754a74f3362aace34",
+      "version": 1,
+      "language": null,
+      "created_at": "2026-09-23T09:14:31.269720+00:00",
+      "updated_at": "2026-09-23T09:14:31.269720+00:00",
+      "metadata": {
+        "test": true,
+        "provider": "mock",
+        "storage_profile_id": "mock_store_test_001",
+        "contributor_id": "contributor_001"
+      }
+    },
+    {
+      "object_id": "knowledge_object_c14684480a4c4c6eb1de02e605e23b92",
+      "object_type": "document",
+      "title": "Duplicate Test",
+      "source": "F:\\AI_Electrical_BIM\\storage\\test-source.txt",
+      "content_hash": "4a10fa1d7317025ee4b97b1658d74bfc4651361149fae947c36e212ac6255cfc",
+      "version": 1,
+      "language": null,
+      "created_at": "2026-09-23T09:15:39.750465+00:00",
+      "updated_at": "2026-09-23T09:15:39.750465+00:00",
+      "metadata": {
+        "test": true,
+        "provider": "mock",
+        "storage_profile_id": "mock_duplicate_test_001",
+        "contributor_id": "contributor_001"
+      }
+    },
+    {
+      "object_id": "knowledge_object_6b01b239f29841b68b410d2e28fdfda4",
+      "object_type": "document",
+      "title": "Multi Replica Test",
+      "source": "F:\\AI_Electrical_BIM\\storage\\test-source.txt",
+      "content_hash": "34a2536fdebeb6af22f063a7d7d39bc69613d3229053d87dda749f02e3160536",
+      "version": 1,
+      "language": null,
+      "created_at": "2026-09-23T09:15:53.903300+00:00",
+      "updated_at": "2026-09-23T09:15:53.903300+00:00",
+      "metadata": {
+        "test": true,
+        "provider": "mock",
+        "storage_profile_id": "mock_replica_test_001",
+        "contributor_id": "contributor_001"
+      }
+    },
+    {
+      "object_id": "knowledge_object_d8e5f69be17b42febeb80166fee2133e",
+      "object_type": "document",
+      "title": "Download Integrity Test",
+      "source": "F:\\AI_Electrical_BIM\\storage\\test-download-source.txt",
+      "content_hash": "41de2f7dce4047c46a66b60101158099573cbfadc213bdc2abbf83294ad001a8",
+      "version": 1,
+      "language": null,
+      "created_at": "2026-09-23T09:16:24.446832+00:00",
+      "updated_at": "2026-09-23T09:16:24.446832+00:00",
+      "metadata": {
+        "test": true,
+        "provider": "mock",
+        "storage_profile_id": "mock_download_test_001",
+        "contributor_id": "contributor_001"
+      }
+    },
+    {
+      "object_id": "knowledge_object_5741ffebf0bf45d0a4043ac0a3edc46c",
+      "object_type": "document",
+      "title": "Download Integrity Test",
+      "source": "F:\\AI_Electrical_BIM\\storage\\test-download-source.txt",
+      "content_hash": "fd9c7dab7753c47ffb49b3c3f78d2bc16188a180a75ba3af66b02d2113312123",
+      "version": 1,
+      "language": null,
+      "created_at": "2026-09-23T09:20:11.294224+00:00",
+      "updated_at": "2026-09-23T09:20:11.294224+00:00",
+      "metadata": {
+        "provider": "mock",
+        "storage_profile_id": "mock_download_test_001",
+        "contributor_id": "contributor_001"
+      }
+    },
+    {
+      "object_id": "knowledge_object_6c8c066e0af44bdab83f29bdfaadc4c5",
+      "object_type": "document",
+      "title": "Integrity Test",
+      "source": "F:\\AI_Electrical_BIM\\storage\\test-integrity-source.txt",
+      "content_hash": "bc59a51a95971ed0c9fd1fea88c7cff6c61aa6ebb27ca8fe8e2f3a087ce35106",
+      "version": 1,
+      "language": null,
+      "created_at": "2026-09-23T09:20:34.940927+00:00",
+      "updated_at": "2026-09-23T09:20:34.940927+00:00",
+      "metadata": {
+        "provider": "mock",
+        "storage_profile_id": "mock_integrity_test_001",
+        "contributor_id": "contributor_001"
+      }
+    },
+    {
+      "object_id": "knowledge_object_098c629cd1c149ae9f331d3a2b45cf95",
+      "object_type": "document",
+      "title": "OpenElecBIM StorageService Google Test",
+      "source": "F:\\AI_Electrical_BIM\\storage\\service-google-test.txt",
+      "content_hash": "4d1e10ddfa45a92e071562f17e6fb23c43efe37ffc84b06d7adc98cdd66577c7",
+      "version": 1,
+      "language": "en",
+      "created_at": "2026-09-23T10:52:59.325369+00:00",
+      "updated_at": "2026-09-23T10:52:59.325369+00:00",
+      "metadata": {
+        "test": "storage_service_google_drive",
+        "purpose": "integration_test",
+        "provider": "google_drive",
+        "storage_profile_id": "storage_profile_google_drive_001",
+        "contributor_id": "contributor_001"
+      }
+    },
+    {
+      "object_id": "knowledge_object_15ee39008a544900adde3574d8e480ca",
+      "object_type": "document",
+      "title": "OpenElecBIM Ledger Preserved Rollback Test",
+      "source": "F:\\AI_Electrical_BIM\\storage\\rollback-test-source.txt",
+      "content_hash": "881b27d87cb78740929ae8122290af0716b21207d166488688ba763e0f41e135",
+      "version": 1,
+      "language": "en",
+      "created_at": "2026-09-23T11:13:53.617442+00:00",
+      "updated_at": "2026-09-23T11:13:53.617442+00:00",
+      "metadata": {
+        "test": "ledger_preserved_rollback",
+        "purpose": "forced_post_ledger_failure",
+        "provider": "google_drive",
+        "storage_profile_id": "storage_profile_google_drive_001",
+        "contributor_id": "contributor_001"
+      }
+    }
+  ]
+}

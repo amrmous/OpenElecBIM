@@ -7,5 +7,17 @@
       "profiles": []
     }
   },
-  "contributors": []
+  "contributors": [
+    {
+      "contributor_id": "contributor_001",
+      "display_name": "Contributor #001",
+      "contributor_type": "individual",
+      "enabled": true,
+      "created_at": "2026-09-23T07:48:01.932551+00:00",
+      "metadata": {
+        "role": "storage_contributor",
+        "initial_contribution": "test_storage"
+      }
+    }
+  ]
 }

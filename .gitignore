@@ -58,3 +58,11 @@ storage/config/backups/
 storage/scripts/backups/
 
 storage/objects/
+
+# Local Storage integration test artifacts
+storage/rollback-test-source.txt
+storage/service-google-test.txt
+storage/service-google-download-test.txt
+
+# Storage test runtime artifacts
+storage/tests/

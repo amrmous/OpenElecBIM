@@ -1,0 +1,210 @@
+{
+  "version": 1,
+  "project": "OpenElecBIM",
+  "entries": [
+    {
+      "contribution_id": "contribution_test_001",
+      "contributor_id": "contributor_001",
+      "object_id": "knowledge_object_test_001",
+      "replica_id": "replica_test_001",
+      "storage_profile_id": "storage_profile_test_001",
+      "action": "create",
+      "content_hash": "abc123hash",
+      "timestamp": "2026-09-23T08:13:36.177485+00:00",
+      "previous_entry_hash": null,
+      "metadata": {
+        "source": "storage_test"
+      },
+      "entry_hash": "7e943ec65b3a02f9585c59c1d84a56c7532c5437d97d5207ebf534e0dc6b0d73"
+    },
+    {
+      "contribution_id": "contribution_9cd18ebc7a61467cbaddfcfb9e26fc16",
+      "contributor_id": "contributor_001",
+      "object_id": "knowledge_object_105f326728f643cc9035cb275f69d0b1",
+      "replica_id": "replica_40e70566b52449aa8a6adce13fa3bff9",
+      "storage_profile_id": "storage_profile_test_001",
+      "action": "create",
+      "content_hash": "75f2850774f14d3acac352631bd6cc0a71e8610af7859c9b0f4c992b34c08b13",
+      "timestamp": "2026-09-23T08:30:57.718639+00:00",
+      "previous_entry_hash": "7e943ec65b3a02f9585c59c1d84a56c7532c5437d97d5207ebf534e0dc6b0d73",
+      "metadata": {
+        "test": true,
+        "stage": "end_to_end_storage",
+        "provider": "mock",
+        "reference": "objects/e2e/end_to_end_source.txt"
+      },
+      "entry_hash": "593b1ca928d177506f070064f13949cc2654d3ab14e23606d556fdb9d92caa47"
+    },
+    {
+      "contribution_id": "contribution_b6ba5ebf853e42e2a281bbd8b4e4b5a0",
+      "contributor_id": "contributor_001",
+      "object_id": "knowledge_object_84d61835cb4a49e88d8826bcdd196fcc",
+      "replica_id": "replica_dffbf26b13f14d289ee4bbf2584cccd5",
+      "storage_profile_id": "storage_profile_test_001",
+      "action": "create",
+      "content_hash": "a428ceda11a9173ecda6ed7aa6dc43685042e26733968be3d5f464e6356e0c1e",
+      "timestamp": "2026-09-23T08:39:04.161883+00:00",
+      "previous_entry_hash": "593b1ca928d177506f070064f13949cc2654d3ab14e23606d556fdb9d92caa47",
+      "metadata": {
+        "test": true,
+        "stage": "successful_commit",
+        "provider": "mock",
+        "reference": "objects/commit/unique_commit_source.txt"
+      },
+      "entry_hash": "f61e3edd626201f457a33f3b65fb4a584d7ff8b5edf2239a2671d89902b24173"
+    },
+    {
+      "contribution_id": "contribution_da167650f9c94fbc99a03854c633f138",
+      "contributor_id": "contributor_001",
+      "object_id": "knowledge_object_2c27363859b24b8b9182a0dd105cbb47",
+      "replica_id": "replica_a4a19107beb84e69b55a6f60be9a117d",
+      "storage_profile_id": "mock_store_test_001",
+      "action": "create",
+      "content_hash": "c70acf8f620b3862c4decb398153e57fa793b049d0f1d79754a74f3362aace34",
+      "timestamp": "2026-09-23T09:14:31.270366+00:00",
+      "previous_entry_hash": "f61e3edd626201f457a33f3b65fb4a584d7ff8b5edf2239a2671d89902b24173",
+      "metadata": {
+        "test": true,
+        "provider": "mock",
+        "reference": "test/object.txt"
+      },
+      "entry_hash": "259cf13a7305423374669200c7411d67020dfc5858dc7964253e39b7b5c413d2"
+    },
+    {
+      "contribution_id": "contribution_7798946e1e994ad38e010cc59fa44383",
+      "contributor_id": "contributor_001",
+      "object_id": "knowledge_object_c14684480a4c4c6eb1de02e605e23b92",
+      "replica_id": "replica_7db820c1f32a42c9ab39a5a5461f1ca9",
+      "storage_profile_id": "mock_duplicate_test_001",
+      "action": "create",
+      "content_hash": "4a10fa1d7317025ee4b97b1658d74bfc4651361149fae947c36e212ac6255cfc",
+      "timestamp": "2026-09-23T09:15:39.751154+00:00",
+      "previous_entry_hash": "259cf13a7305423374669200c7411d67020dfc5858dc7964253e39b7b5c413d2",
+      "metadata": {
+        "test": true,
+        "provider": "mock",
+        "reference": "duplicate/object.txt"
+      },
+      "entry_hash": "451c1a4c5c86869671b05ee21e9198db1ffd10afe6cbb2a434235b2feebe77bb"
+    },
+    {
+      "contribution_id": "contribution_c065d19d995749f7b9b2523b63dfe18d",
+      "contributor_id": "contributor_001",
+      "object_id": "knowledge_object_6b01b239f29841b68b410d2e28fdfda4",
+      "replica_id": "replica_f0ddbc339d01457ab6e3d3af26c2f2be",
+      "storage_profile_id": "mock_replica_test_001",
+      "action": "create",
+      "content_hash": "34a2536fdebeb6af22f063a7d7d39bc69613d3229053d87dda749f02e3160536",
+      "timestamp": "2026-09-23T09:15:53.904011+00:00",
+      "previous_entry_hash": "451c1a4c5c86869671b05ee21e9198db1ffd10afe6cbb2a434235b2feebe77bb",
+      "metadata": {
+        "test": true,
+        "provider": "mock",
+        "reference": "replicas/object.txt"
+      },
+      "entry_hash": "5f9923e1a4bef2db299fc346cd6792a5d6e3f4dd8c08144285246bc81294002e"
+    },
+    {
+      "contribution_id": "contribution_cc08410139394e3d9ac3c71c17a0f7f5",
+      "contributor_id": "contributor_001",
+      "object_id": "knowledge_object_6b01b239f29841b68b410d2e28fdfda4",
+      "replica_id": "replica_7719590a1e944ccaa1b7c9b02af260d1",
+      "storage_profile_id": "mock_replica_test_002",
+      "action": "replica_add",
+      "content_hash": "34a2536fdebeb6af22f063a7d7d39bc69613d3229053d87dda749f02e3160536",
+      "timestamp": "2026-09-23T09:15:53.907121+00:00",
+      "previous_entry_hash": "5f9923e1a4bef2db299fc346cd6792a5d6e3f4dd8c08144285246bc81294002e",
+      "metadata": {
+        "test": true,
+        "provider": "mock",
+        "reference": "replicas/object.txt"
+      },
+      "entry_hash": "748e07b06e604d4b59342ac75704fdf46e9fa19309dff4da3f8538eed3c53f69"
+    },
+    {
+      "contribution_id": "contribution_dfec3dde5c204404b0cdf746561c4a29",
+      "contributor_id": "contributor_001",
+      "object_id": "knowledge_object_d8e5f69be17b42febeb80166fee2133e",
+      "replica_id": "replica_ec1e99ea1acc42728a0fe0dbd9aa425b",
+      "storage_profile_id": "mock_download_test_001",
+      "action": "create",
+      "content_hash": "41de2f7dce4047c46a66b60101158099573cbfadc213bdc2abbf83294ad001a8",
+      "timestamp": "2026-09-23T09:16:24.447592+00:00",
+      "previous_entry_hash": "748e07b06e604d4b59342ac75704fdf46e9fa19309dff4da3f8538eed3c53f69",
+      "metadata": {
+        "test": true,
+        "provider": "mock",
+        "reference": "downloads/object.txt"
+      },
+      "entry_hash": "891239303c4d603bf66f350ae4ccae502334948b9e686ec18baf2563b9db55ee"
+    },
+    {
+      "contribution_id": "contribution_11a09fde3a414e3e8c2097a063aac34e",
+      "contributor_id": "contributor_001",
+      "object_id": "knowledge_object_5741ffebf0bf45d0a4043ac0a3edc46c",
+      "replica_id": "replica_68c821da5b7a4a8f940034444d82cdf3",
+      "storage_profile_id": "mock_download_test_001",
+      "action": "create",
+      "content_hash": "fd9c7dab7753c47ffb49b3c3f78d2bc16188a180a75ba3af66b02d2113312123",
+      "timestamp": "2026-09-23T09:20:11.295049+00:00",
+      "previous_entry_hash": "891239303c4d603bf66f350ae4ccae502334948b9e686ec18baf2563b9db55ee",
+      "metadata": {
+        "provider": "mock",
+        "reference": "objects/fd/test-download-source.txt"
+      },
+      "entry_hash": "fe83148ef7d330ef260b1964f90d7e0dfbbc8f864a2fbda5d5d1415a1445b8a4"
+    },
+    {
+      "contribution_id": "contribution_bd58347730e64cd7bde423545c6b5948",
+      "contributor_id": "contributor_001",
+      "object_id": "knowledge_object_6c8c066e0af44bdab83f29bdfaadc4c5",
+      "replica_id": "replica_610d6952e40645f497a750fe209e9c3a",
+      "storage_profile_id": "mock_integrity_test_001",
+      "action": "create",
+      "content_hash": "bc59a51a95971ed0c9fd1fea88c7cff6c61aa6ebb27ca8fe8e2f3a087ce35106",
+      "timestamp": "2026-09-23T09:20:34.941652+00:00",
+      "previous_entry_hash": "fe83148ef7d330ef260b1964f90d7e0dfbbc8f864a2fbda5d5d1415a1445b8a4",
+      "metadata": {
+        "provider": "mock",
+        "reference": "objects/bc/test-integrity-source.txt"
+      },
+      "entry_hash": "90e6a456a4db595af931d57f9b1ec5ab4e31e7e76229c1cc6c84fea54ccad8ec"
+    },
+    {
+      "contribution_id": "contribution_37faa5b644d64a238f3820449c9472f5",
+      "contributor_id": "contributor_001",
+      "object_id": "knowledge_object_098c629cd1c149ae9f331d3a2b45cf95",
+      "replica_id": "replica_659e44184a914fed8f4d778d4d70dfb1",
+      "storage_profile_id": "storage_profile_google_drive_001",
+      "action": "create",
+      "content_hash": "4d1e10ddfa45a92e071562f17e6fb23c43efe37ffc84b06d7adc98cdd66577c7",
+      "timestamp": "2026-09-23T10:52:59.326332+00:00",
+      "previous_entry_hash": "90e6a456a4db595af931d57f9b1ec5ab4e31e7e76229c1cc6c84fea54ccad8ec",
+      "metadata": {
+        "test": "storage_service_google_drive",
+        "purpose": "integration_test",
+        "provider": "google_drive",
+        "reference": "1tAXRsIOpFlJW1VQt0gDMlzRVKbgI-rE8"
+      },
+      "entry_hash": "407962d622524624fc14b6b7ab03593ddb6606780b3c7fd65676e7ee48f7648b"
+    },
+    {
+      "contribution_id": "contribution_347d7537e04e490d910c0b917ee358c2",
+      "contributor_id": "contributor_001",
+      "object_id": "knowledge_object_15ee39008a544900adde3574d8e480ca",
+      "replica_id": "replica_44b7a15817f64092bb165ddb7e199129",
+      "storage_profile_id": "storage_profile_google_drive_001",
+      "action": "create",
+      "content_hash": "881b27d87cb78740929ae8122290af0716b21207d166488688ba763e0f41e135",
+      "timestamp": "2026-09-23T11:13:53.618488+00:00",
+      "previous_entry_hash": "407962d622524624fc14b6b7ab03593ddb6606780b3c7fd65676e7ee48f7648b",
+      "metadata": {
+        "test": "ledger_preserved_rollback",
+        "purpose": "forced_post_ledger_failure",
+        "provider": "google_drive",
+        "reference": "1CZc_ij7sx5T8ARRi6N80IJJOV0P5Cyz2"
+      },
+      "entry_hash": "9f273c6d40ed899343b8ade5035de8cf2a7058d005652b5bd878e5ebc9c654b9"
+    }
+  ]
+}

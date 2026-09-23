@@ -1,0 +1,218 @@
+{
+  "version": 1,
+  "project": "OpenElecBIM",
+  "replicas": [
+    {
+      "replica_id": "replica_test_001",
+      "object_id": "knowledge_object_test_001",
+      "contributor_id": "contributor_001",
+      "storage_profile_id": "storage_profile_test_001",
+      "provider": "google_drive",
+      "reference": "test://knowledge_object_test_001",
+      "status": "active",
+      "content_hash": "abc123hash",
+      "hash_algorithm": "sha256",
+      "created_at": "2026-09-23T08:06:02.628293+00:00",
+      "updated_at": "2026-09-23T08:06:02.628302+00:00",
+      "metadata": {}
+    },
+    {
+      "replica_id": "replica_40e70566b52449aa8a6adce13fa3bff9",
+      "object_id": "knowledge_object_105f326728f643cc9035cb275f69d0b1",
+      "contributor_id": "contributor_001",
+      "storage_profile_id": "storage_profile_test_001",
+      "provider": "mock",
+      "reference": "objects/e2e/end_to_end_source.txt",
+      "status": "active",
+      "content_hash": "75f2850774f14d3acac352631bd6cc0a71e8610af7859c9b0f4c992b34c08b13",
+      "hash_algorithm": "sha256",
+      "created_at": "2026-09-23T08:30:57.718368+00:00",
+      "updated_at": "2026-09-23T08:30:57.718374+00:00",
+      "metadata": {
+        "test": true,
+        "stage": "end_to_end_storage",
+        "uploaded_hash": "75f2850774f14d3acac352631bd6cc0a71e8610af7859c9b0f4c992b34c08b13"
+      }
+    },
+    {
+      "replica_id": "replica_dffbf26b13f14d289ee4bbf2584cccd5",
+      "object_id": "knowledge_object_84d61835cb4a49e88d8826bcdd196fcc",
+      "contributor_id": "contributor_001",
+      "storage_profile_id": "storage_profile_test_001",
+      "provider": "mock",
+      "reference": "objects/commit/unique_commit_source.txt",
+      "status": "active",
+      "content_hash": "a428ceda11a9173ecda6ed7aa6dc43685042e26733968be3d5f464e6356e0c1e",
+      "hash_algorithm": "sha256",
+      "created_at": "2026-09-23T08:39:04.161595+00:00",
+      "updated_at": "2026-09-23T08:39:04.161600+00:00",
+      "metadata": {
+        "test": true,
+        "stage": "successful_commit",
+        "uploaded_hash": "a428ceda11a9173ecda6ed7aa6dc43685042e26733968be3d5f464e6356e0c1e"
+      }
+    },
+    {
+      "replica_id": "replica_a4a19107beb84e69b55a6f60be9a117d",
+      "object_id": "knowledge_object_2c27363859b24b8b9182a0dd105cbb47",
+      "contributor_id": "contributor_001",
+      "storage_profile_id": "mock_store_test_001",
+      "provider": "mock",
+      "reference": "test/object.txt",
+      "status": "active",
+      "content_hash": "c70acf8f620b3862c4decb398153e57fa793b049d0f1d79754a74f3362aace34",
+      "hash_algorithm": "sha256",
+      "created_at": "2026-09-23T09:14:31.270075+00:00",
+      "updated_at": "2026-09-23T09:14:31.270079+00:00",
+      "metadata": {
+        "test": true,
+        "uploaded_hash": "c70acf8f620b3862c4decb398153e57fa793b049d0f1d79754a74f3362aace34",
+        "operation": "create"
+      }
+    },
+    {
+      "replica_id": "replica_7db820c1f32a42c9ab39a5a5461f1ca9",
+      "object_id": "knowledge_object_c14684480a4c4c6eb1de02e605e23b92",
+      "contributor_id": "contributor_001",
+      "storage_profile_id": "mock_duplicate_test_001",
+      "provider": "mock",
+      "reference": "duplicate/object.txt",
+      "status": "active",
+      "content_hash": "4a10fa1d7317025ee4b97b1658d74bfc4651361149fae947c36e212ac6255cfc",
+      "hash_algorithm": "sha256",
+      "created_at": "2026-09-23T09:15:39.750848+00:00",
+      "updated_at": "2026-09-23T09:15:39.750853+00:00",
+      "metadata": {
+        "test": true,
+        "uploaded_hash": "4a10fa1d7317025ee4b97b1658d74bfc4651361149fae947c36e212ac6255cfc",
+        "operation": "create"
+      }
+    },
+    {
+      "replica_id": "replica_f0ddbc339d01457ab6e3d3af26c2f2be",
+      "object_id": "knowledge_object_6b01b239f29841b68b410d2e28fdfda4",
+      "contributor_id": "contributor_001",
+      "storage_profile_id": "mock_replica_test_001",
+      "provider": "mock",
+      "reference": "replicas/object.txt",
+      "status": "active",
+      "content_hash": "34a2536fdebeb6af22f063a7d7d39bc69613d3229053d87dda749f02e3160536",
+      "hash_algorithm": "sha256",
+      "created_at": "2026-09-23T09:15:53.903672+00:00",
+      "updated_at": "2026-09-23T09:15:53.903678+00:00",
+      "metadata": {
+        "test": true,
+        "uploaded_hash": "34a2536fdebeb6af22f063a7d7d39bc69613d3229053d87dda749f02e3160536",
+        "operation": "create"
+      }
+    },
+    {
+      "replica_id": "replica_7719590a1e944ccaa1b7c9b02af260d1",
+      "object_id": "knowledge_object_6b01b239f29841b68b410d2e28fdfda4",
+      "contributor_id": "contributor_001",
+      "storage_profile_id": "mock_replica_test_002",
+      "provider": "mock",
+      "reference": "replicas/object.txt",
+      "status": "active",
+      "content_hash": "34a2536fdebeb6af22f063a7d7d39bc69613d3229053d87dda749f02e3160536",
+      "hash_algorithm": "sha256",
+      "created_at": "2026-09-23T09:15:53.906630+00:00",
+      "updated_at": "2026-09-23T09:15:53.906637+00:00",
+      "metadata": {
+        "test": true,
+        "uploaded_hash": "34a2536fdebeb6af22f063a7d7d39bc69613d3229053d87dda749f02e3160536",
+        "operation": "replica_add"
+      }
+    },
+    {
+      "replica_id": "replica_ec1e99ea1acc42728a0fe0dbd9aa425b",
+      "object_id": "knowledge_object_d8e5f69be17b42febeb80166fee2133e",
+      "contributor_id": "contributor_001",
+      "storage_profile_id": "mock_download_test_001",
+      "provider": "mock",
+      "reference": "downloads/object.txt",
+      "status": "active",
+      "content_hash": "41de2f7dce4047c46a66b60101158099573cbfadc213bdc2abbf83294ad001a8",
+      "hash_algorithm": "sha256",
+      "created_at": "2026-09-23T09:16:24.447252+00:00",
+      "updated_at": "2026-09-23T09:16:24.447257+00:00",
+      "metadata": {
+        "test": true,
+        "uploaded_hash": "41de2f7dce4047c46a66b60101158099573cbfadc213bdc2abbf83294ad001a8",
+        "operation": "create"
+      }
+    },
+    {
+      "replica_id": "replica_68c821da5b7a4a8f940034444d82cdf3",
+      "object_id": "knowledge_object_5741ffebf0bf45d0a4043ac0a3edc46c",
+      "contributor_id": "contributor_001",
+      "storage_profile_id": "mock_download_test_001",
+      "provider": "mock",
+      "reference": "objects/fd/test-download-source.txt",
+      "status": "active",
+      "content_hash": "fd9c7dab7753c47ffb49b3c3f78d2bc16188a180a75ba3af66b02d2113312123",
+      "hash_algorithm": "sha256",
+      "created_at": "2026-09-23T09:20:11.294678+00:00",
+      "updated_at": "2026-09-23T09:20:11.294684+00:00",
+      "metadata": {
+        "uploaded_hash": "fd9c7dab7753c47ffb49b3c3f78d2bc16188a180a75ba3af66b02d2113312123",
+        "operation": "create"
+      }
+    },
+    {
+      "replica_id": "replica_610d6952e40645f497a750fe209e9c3a",
+      "object_id": "knowledge_object_6c8c066e0af44bdab83f29bdfaadc4c5",
+      "contributor_id": "contributor_001",
+      "storage_profile_id": "mock_integrity_test_001",
+      "provider": "mock",
+      "reference": "objects/bc/test-integrity-source.txt",
+      "status": "active",
+      "content_hash": "bc59a51a95971ed0c9fd1fea88c7cff6c61aa6ebb27ca8fe8e2f3a087ce35106",
+      "hash_algorithm": "sha256",
+      "created_at": "2026-09-23T09:20:34.941310+00:00",
+      "updated_at": "2026-09-23T09:20:34.941315+00:00",
+      "metadata": {
+        "uploaded_hash": "bc59a51a95971ed0c9fd1fea88c7cff6c61aa6ebb27ca8fe8e2f3a087ce35106",
+        "operation": "create"
+      }
+    },
+    {
+      "replica_id": "replica_659e44184a914fed8f4d778d4d70dfb1",
+      "object_id": "knowledge_object_098c629cd1c149ae9f331d3a2b45cf95",
+      "contributor_id": "contributor_001",
+      "storage_profile_id": "storage_profile_google_drive_001",
+      "provider": "google_drive",
+      "reference": "1tAXRsIOpFlJW1VQt0gDMlzRVKbgI-rE8",
+      "status": "active",
+      "content_hash": "4d1e10ddfa45a92e071562f17e6fb23c43efe37ffc84b06d7adc98cdd66577c7",
+      "hash_algorithm": "sha256",
+      "created_at": "2026-09-23T10:52:59.325930+00:00",
+      "updated_at": "2026-09-23T10:52:59.325936+00:00",
+      "metadata": {
+        "test": "storage_service_google_drive",
+        "purpose": "integration_test",
+        "uploaded_hash": "4d1e10ddfa45a92e071562f17e6fb23c43efe37ffc84b06d7adc98cdd66577c7",
+        "operation": "create"
+      }
+    },
+    {
+      "replica_id": "replica_44b7a15817f64092bb165ddb7e199129",
+      "object_id": "knowledge_object_15ee39008a544900adde3574d8e480ca",
+      "contributor_id": "contributor_001",
+      "storage_profile_id": "storage_profile_google_drive_001",
+      "provider": "google_drive",
+      "reference": "1CZc_ij7sx5T8ARRi6N80IJJOV0P5Cyz2",
+      "status": "active",
+      "content_hash": "881b27d87cb78740929ae8122290af0716b21207d166488688ba763e0f41e135",
+      "hash_algorithm": "sha256",
+      "created_at": "2026-09-23T11:13:53.618059+00:00",
+      "updated_at": "2026-09-23T11:16:45.810716+00:00",
+      "metadata": {
+        "test": "ledger_preserved_rollback",
+        "purpose": "forced_post_ledger_failure",
+        "uploaded_hash": "881b27d87cb78740929ae8122290af0716b21207d166488688ba763e0f41e135",
+        "operation": "create"
+      }
+    }
+  ]
+}
